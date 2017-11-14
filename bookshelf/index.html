@@ -1,0 +1,53 @@
+---
+# blog page must be named index.html and in its own folder to support pagination
+# https://jekyllrb.com/docs/pagination/
+layout: page
+title: Bookshelf
+---
+
+<section class="list">
+  <h1>Bookshelf</h1>
+  <p>Inspired by
+      <a href="http://jasdev.me/bookshelf/">Jasdev Singh</a>,
+      <a href="https://patrickcollison.com/bookshelf">Patrick Collison</a>
+      and others, here is a list of books that I have in my digital or analog bookshelf.
+      I have read most of the titles listed here, or plan on reading them shortly.
+      Hopefully you can use this as a place to find a recommendation when you need a new book!
+  </p>
+  <h2>Key</h2>
+  <ul>
+    <li>:headphones: Listened to audiobook</li>
+    <li>:book: Read physical book</li>
+    <li>:iphone: Read on Kindle</li>
+    <li>:pencil: In progress</li>
+    <li>:fire: I liked this book, and you should read it too!</li>
+  </ul>
+  <div></div>
+  <div></div>
+</section>
+
+<section class="list">
+  <h2>Books</h2>
+  {% if site.posts.size == 0 %}
+    <p class="text-center">Nothing published yet!</p>
+  {% elsif site.paginate %}
+    {% for post in paginator.posts %}
+      {% if post.category == 'book' %}
+        {% if post.hidden != true %}
+          {% include blog-post.html %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+
+  {% include pagination.html%}
+  {% else %}
+    {% for post in site.posts %}
+      {% if post.category == 'book' %}
+        {% if post.hidden != true %}
+          {% include book-post.html %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+</section>
+

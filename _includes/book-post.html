@@ -1,0 +1,12 @@
+<div class="item {% if post.star %}star{% endif %}">
+    <a class="url" href="{{ post.amazonLink }}">
+        <h4 class="title">
+          {{ post.title }} ({{ post.bookAuthor }})
+          {% if post.format == "audiobook" %} :headphones: {% endif %}
+          {% if post.format == "kindle" %} :iphone: {% endif %}
+          {% if post.format == "book" %} :book: {% endif %}
+          {% if post.format == "in-progress" %} :pencil: {% endif %}
+          {% if post.recommended %} :fire: {% endif %}
+        </h4>
+    </a>
+</div>

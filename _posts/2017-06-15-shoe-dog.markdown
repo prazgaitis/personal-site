@@ -1,0 +1,14 @@
+---
+title: "Shoe Dog: A Memoir by the Creator of Nike"
+bookAuthor: "Phil Knight" 
+layout: book
+format: audiobook # book | audiobook | kindle
+recommended: true
+date: 2017-06-15
+tag: book
+projects: false
+books: true
+hidden: false # don't count this post in blog pagination
+category: book
+amazonLink: "http://amzn.to/2hheTQz"
+---
