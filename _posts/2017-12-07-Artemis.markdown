@@ -1,0 +1,14 @@
+---
+title: "Artemis"
+bookAuthor: "Andy Weir"
+layout: book
+format: "audiobook"
+recommended: "false"
+date: "2017-12-07"
+tag: book
+projects: false
+books: true
+hidden: false
+category: book
+amazonLink: "https://www.amazon.com/s?field-keywords=artemis+andy+weir"
+---
