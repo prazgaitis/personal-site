@@ -1,6 +1,7 @@
 ---
 title: "Artemis"
 bookAuthor: "Andy Weir"
+description: "A story about Jazz Bashara, a porter/smuggler on the moon's first city - Artemis. Jazz gets caught up in some shady stuff and almost ends up taking out the whole city. A pretty entertaining read from Andy Weir, who also wrote the Martian."
 layout: book
 format: "audiobook"
 recommended: "false"
