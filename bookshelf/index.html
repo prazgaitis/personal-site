@@ -28,25 +28,21 @@ title: Bookshelf
 
 <section class="list">
   <h2>Books</h2>
-  {% if site.posts.size == 0 %}
-    <p class="text-center">Nothing published yet!</p>
-  {% elsif site.paginate %}
-    {% for post in paginator.posts %}
-      {% if post.category == 'book' %}
-        {% if post.hidden != true %}
-          {% include blog-post.html %}
-        {% endif %}
-      {% endif %}
-    {% endfor %}
+  {% if site.data.books.size == 0 %}
+    <p class="text-center">No books entered yet</p>
+  {# {% elsif site.paginate %} #}
+  {#   {% for post in paginator.posts %} #}
+  {#     {% if post.category == 'book' %} #}
+  {#       {% if post.hidden != true %} #}
+  {#         {% include blog-post.html %} #}
+  {#       {% endif %} #}
+  {#     {% endif %} #}
+  {#   {% endfor %} #}
 
   {% include pagination.html%}
   {% else %}
-    {% for post in site.posts %}
-      {% if post.category == 'book' %}
-        {% if post.hidden != true %}
-          {% include book-post.html %}
-        {% endif %}
-      {% endif %}
+    {% for book in site.data.books %}
+      {% include book-post.html %}
     {% endfor %}
   {% endif %}
 </section>

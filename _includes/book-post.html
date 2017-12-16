@@ -1,13 +1,13 @@
-<div class="book item {% if post.star %}star{% endif %}" >
-  <a class="url" href="{{ post.amazonLink }}">
+<div class="book item" >
+  <a class="url" href="{{ book.amazonLink }}">
     <h4 class="title" id="title-{{ forloop.index }}">
-      {{ post.title }} ({{ post.bookAuthor }})
-      {% if post.format == "audiobook" %} :headphones: {% endif %}
-      {% if post.format == "kindle" %} :iphone: {% endif %}
-      {% if post.format == "book" %} :book: {% endif %}
-      {% if post.format == "in-progress" %} :pencil: {% endif %}
-      {% if post.recommended %} :fire: {% endif %}
+      {{ book.title }} ({{ book.bookAuthor }})
+      {% if book.format == "audiobook" %} :headphones: {% endif %}
+      {% if book.format == "kindle" %} :iphone: {% endif %}
+      {% if book.format == "book" %} :book: {% endif %}
+      {% if book.format == "in-progress" %} :pencil: {% endif %}
+      {% if book.recommended %} :fire: {% endif %}
     </h4>
   </a>
-  <!-- <span display="none" id="description&#45;{{ forloop.index }}">{{  post.description }}</span> -->
+  <!-- <span display="none" id="description&#45;{{ forloop.index }}">{{  book.description }}</span> -->
 </div>
