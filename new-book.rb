@@ -26,23 +26,26 @@ date = gets.chomp
 puts "Amazon URL:\n"
 url = gets.chomp
 
-filename = "./_posts/#{date}-#{title.gsub(' ', '-')}.markdown"
+filename = "./_data/books.yml"
 
-IO.popen("pbcopy", "w") { |pipe| pipe.puts "#{title} #{bookAuthor}" }
+require 'yaml'
+yaml_string = File.read filename
+books = YAML.load yaml_string
 
-open(filename, 'w') { |f|
-  f << "---\n"
-  f << "title: \"#{title}\"\n"
-  f << "bookAuthor: \"#{bookAuthor}\"\n"
-  f << "layout: book\n"
-  f << "format: \"#{format}\"\n"
-  f << "recommended: \"#{recommended}\"\n"
-  f << "date: \"#{date}\"\n"
-  f << "tag: book\n"
-  f << "projects: false\n"
-  f << "books: true\n"
-  f << "hidden: false\n"
-  f << "category: book\n"
-  f << "amazonLink: \"#{url}\"\n"
-  f << "---"
+puts books.count
+
+book = {
+  "title" => title,
+  "bookAuthor" => bookAuthor,
+  "format" => format,
+  "recommended" => recommended,
+  "date" =>  date,
+  "amazonLink" =>  url,
 }
+
+books <<  book
+
+
+# output = YAML.dump data
+File.open(filename, 'w') {|f| f.write books.to_yaml }
+

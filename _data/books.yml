@@ -1,0 +1,226 @@
+---
+- title: Tools of Titans
+  bookAuthor: Tim Ferriss
+  format: kindle
+  recommended: 'false'
+  amazonLink: http://amzn.to/2hheTQz
+- title: Lone Survivor
+  bookAuthor: Marcus Luttrell
+  format: kindle
+  recommended: 'true'
+  amazonLink: http://amzn.to/2f3PZ5Y
+- title: Open, An Autobiography
+  bookAuthor: Andre Agassi
+  format: kindle
+  recommended: 'true'
+  amazonLink: http://amzn.to/2uT089x
+- title: The Merry Adventures of Robin Hood
+  bookAuthor: Howard Pyle
+  format: kindle
+  recommended: 'true'
+  amazonLink: http://amzn.to/2w0uyXE
+- title: The Adventures of Huckleberry Finn
+  bookAuthor: Mark Twain
+  format: book
+  recommended: 'true'
+  amazonLink: http://amzn.to/2wg9BHr
+- title: The Adventures of Tom Sawyer
+  bookAuthor: Mark Twain
+  format: kindle
+  recommended: 'true'
+  amazonLink: http://amzn.to/2vcTHRe
+- title: If I Did It
+  bookAuthor: O.J. Simpson
+  format: kindle
+  recommended: 'false'
+  amazonLink: http://amzn.to/2uSBG8b
+- title: The Three Musketeers
+  bookAuthor: Alexandre Dumas
+  format: book
+  recommended: 'true'
+  amazonLink: http://amzn.to/2vcVbLB
+- title: Steve Jobs
+  bookAuthor: Walter Isaacson
+  format: kindle
+  recommended: 'true'
+  amazonLink: http://amzn.to/2hiv5kp
+- title: The Girl Who Played With Fire
+  bookAuthor: Steig Larsson
+  format: kindle
+  recommended: 'false'
+  amazonLink: http://amzn.to/2uPO1vv
+- title: The Alchemist
+  bookAuthor: Paulo Cuelho
+  format: kindle
+  recommended: 'true'
+  amazonLink: http://amzn.to/2vcTehW
+- title: Born To Run
+  bookAuthor: Christopher McDougall
+  format: book
+  recommended: 'true'
+  amazonLink: http://amzn.to/2f2nPZ8
+- title: The Count of Monte Cristo
+  bookAuthor: Alexandre Dumas
+  format: book
+  recommended: 'true'
+  amazonLink: http://amzn.to/2uSFd6q
+- title: Think Like a Freak
+  bookAuthor: Steven D. Levitt and Stephen J. Dubner
+  format: kindle
+  recommended: 'false'
+  amazonLink: http://amzn.to/2hiRiz1
+- title: Trust Me, I'm Lying
+  bookAuthor: Ryan Holiday
+  format: audiobook
+  recommended: 'false'
+  amazonLink: http://amzn.to/2uT2SUg
+- title: Blink
+  bookAuthor: Malcolm Gladwell
+  format: kindle
+  recommended: 'true'
+  amazonLink: http://amzn.to/2uPUlTY
+- title: Flash Boys
+  bookAuthor: Michael Lewis
+  format: kindle
+  recommended: 'true'
+  amazonLink: http://amzn.to/2uSV1GA
+- title: How to Win at the Sport of Business
+  bookAuthor: Mark Cuban
+  format: kindle
+  recommended: 'true'
+  amazonLink: http://amzn.to/2uSEjqy
+- title: The Tipping Point
+  bookAuthor: Malcolm Gladwell
+  format: kindle
+  recommended: 'false'
+  amazonLink: http://amzn.to/2wgcng6
+- title: The Vicomte De Bragelonne
+  bookAuthor: Alexandre Dumas
+  format: kindle
+  recommended: 'false'
+  amazonLink: http://amzn.to/2wfX2Md
+- title: The Wolf of Wall Street
+  bookAuthor: Jordan Belfort
+  format: kindle
+  recommended: 'false'
+  amazonLink: http://amzn.to/2hipQRL
+- title: Twenty Years After
+  bookAuthor: Alexandre Dumas
+  format: kindle
+  recommended: 'false'
+  amazonLink: http://amzn.to/2vcPPQj
+- title: The 4 Hour Workweek
+  bookAuthor: Tim Ferriss
+  format: kindle
+  recommended: 'false'
+  amazonLink: http://amzn.to/2tYN4SJ
+- title: A Brief History of Time
+  bookAuthor: Stephen Hawking and Grover Gardner
+  format: kindle
+  recommended: 'true'
+  amazonLink: http://amzn.to/2uPJLw1
+- title: Red Rising
+  bookAuthor: Pierce Brown
+  format: kindle
+  recommended: 'true'
+  amazonLink: http://amzn.to/2f3ogT7
+- title: The Lies of Locke Lamora
+  bookAuthor: Scott Lynch
+  format: kindle
+  recommended: 'true'
+  amazonLink: http://amzn.to/2hhUWsL
+- title: The Republic of Thieves
+  bookAuthor: Scott Lynch
+  format: kindle
+  recommended: 'true'
+  amazonLink: http://amzn.to/2hhUWsL
+- title: The Martian
+  bookAuthor: Andy Weir
+  format: book
+  recommended: 'true'
+  amazonLink: http://amzn.to/2ueo7xX
+- title: Sapiens
+  bookAuthor: Yuval Noah Harari
+  format: audiobook
+  recommended: 'true'
+  amazonLink: http://amzn.to/2uPIeWV
+- title: Homo Deus
+  bookAuthor: 'Yuval Noah Harari '
+  format: 'book # book | audiobook | kindle'
+  recommended: 'true'
+  amazonLink: https://www.amazon.com/Homo-Deus-Brief-History-Tomorrow/dp/0062464310/ref=as_li_ss_il?ie=UTF8&linkCode=li3&tag=pr0c18-20&linkId=19b1aeead357da351a719a52e6de78ce
+- title: City of Thieves
+  bookAuthor: David Benioff
+  format: kindle
+  recommended: 'true'
+  amazonLink: http://amzn.to/2uPExAs
+- title: Benjamin Franklin
+  bookAuthor: Walter Isaacson
+  format: audiobook
+  recommended: 'true'
+  amazonLink: http://amzn.to/2hiXeaT
+- title: Ready Player One
+  bookAuthor: Ernest Cline
+  format: kindle
+  recommended: 'false'
+  amazonLink: http://amzn.to/2vc7Xdi
+- title: Born a Crime
+  bookAuthor: Trevor Noah
+  format: in-progress
+  recommended: 'false'
+  amazonLink: http://amzn.to/2uSWOLT
+- title: The Magic of Thinking Big
+  bookAuthor: David Schwartz
+  format: audiobook
+  recommended: 'false'
+  amazonLink: http://amzn.to/2uQdHbz
+- title: Digital Gold
+  bookAuthor: Nathaniel Popper
+  format: audiobook
+  recommended: 'true'
+  amazonLink: http://amzn.to/2uPU9UG
+- title: Mistborn
+  bookAuthor: Brandon Sanderson
+  format: kindle
+  recommended: 'true'
+  amazonLink: http://amzn.to/2uempg1
+- title: The Richest Man in Babylon
+  bookAuthor: George S. Clason
+  format: kindle
+  recommended: 'false'
+  amazonLink: http://amzn.to/2uPOP3q
+- title: The Kite Runner
+  bookAuthor: Khaled Hosseini
+  format: book
+  recommended: 'false'
+  amazonLink: http://amzn.to/2hiWWkn
+- title: The Well of Ascension
+  bookAuthor: Brandon Sanderson
+  format: audiobook
+  recommended: 'true'
+  amazonLink: http://amzn.to/2wfSw0s
+- title: Shoe Dog
+  bookAuthor: 'Phil Knight '
+  format: 'audiobook # book | audiobook | kindle'
+  recommended: 'true'
+  amazonLink: http://amzn.to/2hheTQz
+- title: The Hero of Ages
+  bookAuthor: Brandon Sanderson
+  format: audiobook
+  recommended: 'true'
+  amazonLink: http://amzn.to/2f2YzC0
+- title: Red Notice
+  bookAuthor: Bill Browder
+  format: audiobook
+  recommended: 'true'
+  amazonLink: http://amzn.to/2gXIM5r
+- title: Blitzed
+  bookAuthor: Norman Ohler
+  format: audiobook
+  recommended: 'false'
+  amazonLink: http://amzn.to/2hxveRZ
+- title: Cryptonomicon
+  bookAuthor: Neal Stephenson
+  format: kindle
+  recommended: 'false'
+  amazonLink: http://amzn.to/2BszZ4u
