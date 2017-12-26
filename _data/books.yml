@@ -237,3 +237,9 @@
   recommended: true
   date: '2017-12-23'
   amazonLink: http://amzn.to/2DTzr8J
+- title: Artemis
+  bookAuthor: Andy Weir
+  format: audiobook
+  recommended: false
+  date: '2017-12-15'
+  amazonLink: http://amzn.to/2Dfxd2q
