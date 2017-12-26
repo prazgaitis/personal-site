@@ -41,7 +41,7 @@ title: Bookshelf
 
   {% include pagination.html%}
   {% else %}
-    {% for book in site.data.books %}
+    {% for book in site.data.books reversed %}
       {% include book-post.html %}
     {% endfor %}
   {% endif %}

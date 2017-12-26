@@ -224,3 +224,16 @@
   format: kindle
   recommended: 'false'
   amazonLink: http://amzn.to/2BszZ4u
+- title: 'The Subtle Art of Not Giving a F*ck: A Counterintuitive Approach to Living
+    a Good Life'
+  bookAuthor: Mark Manson
+  format: book
+  recommended: false
+  date: '2017-12-25'
+  amazonLink: http://amzn.to/2DhdPlQ
+- title: 'The Art of Learning: An Inner Journey to Optimal Performance'
+  bookAuthor: Josh Waitzkin
+  format: audiobook
+  recommended: true
+  date: '2017-12-23'
+  amazonLink: http://amzn.to/2DTzr8J
