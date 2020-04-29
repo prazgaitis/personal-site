@@ -1,5 +1,5 @@
 ---
-title: ":christmas_tree: Alexa, turn on the Christmas lights"
+title: "Alexa, turn on the Christmas lights"
 layout: post
 date: 2017-12-01 20:10
 tag: side-project
@@ -20,10 +20,11 @@ This year for the holiday season, I decided to try to hook up the Christmas tree
 I opted for a much more modest goal than Jeff's - I just wanted to turn my Christmas tree on and off with Alexa. I originally thought about trying to have Alexa enable "christmas mode", which would turn on some music, kill all the lights, light the fireplace, and turn on the tree for a grand finale. I decided on a much more modest goal, and hopefully also avoided burning down the entire building.
 
 ## Materials
-1. [IoT Relay](http://amzn.to/2iadgl8) - $30
-2. [Electric Imp - April Breakout board](http://amzn.to/2ApXgnw) - $24
-3. [Electric Imp card](http://amzn.to/2npoFTs) - $50
-4. [a breadboard](http://amzn.to/2nmpPPL) - $7
+
+1. [IoT Relay](http://amzn.to/2iadgl8) - \$30
+2. [Electric Imp - April Breakout board](http://amzn.to/2ApXgnw) - \$24
+3. [Electric Imp card](http://amzn.to/2npoFTs) - \$50
+4. [a breadboard](http://amzn.to/2nmpPPL) - \$7
 
 Luckily I already had all this stuff laying around from older projects.
 
@@ -31,7 +32,7 @@ Luckily I already had all this stuff laying around from older projects.
 
 I wanted to use as much IoT hardware that I already had, so the setup needed to be pretty simple. I also wanted the whole thing to be serverless, so Amazon Lambda functions seemed like a good tool.
 
-Turning on the Christmas lights was on and off was pretty simple. I had an [IoT Power Relay](http://amzn.to/2iadgl8) laying around. This device lets you control a power outlet with a Raspberry Pi, Arduino, or other Microprocessor. I used an [Electric Imp](http://amzn.to/2Aqroiz) because I had one that my friend gave me a while back. (Thanks  [Ali](https://twitter.com/h0ngbird)!) The Imp is great because it has a web interface that you can hit with GET requests.
+Turning on the Christmas lights was on and off was pretty simple. I had an [IoT Power Relay](http://amzn.to/2iadgl8) laying around. This device lets you control a power outlet with a Raspberry Pi, Arduino, or other Microprocessor. I used an [Electric Imp](http://amzn.to/2Aqroiz) because I had one that my friend gave me a while back. (Thanks [Ali](https://twitter.com/h0ngbird)!) The Imp is great because it has a web interface that you can hit with GET requests.
 
 So, the plan looks like this:
 
@@ -76,7 +77,7 @@ And the device code:
 ```js
 // Device code (the Elctric imp runs this)
 // 1. create a variable for the output pin
-relay <- hardware.pin9;
+relay < -hardware.pin9;
 // 2. Set the pin to 0
 relay.configure(DIGITAL_OUT, 0);
 function setPowerState(state) {
@@ -100,6 +101,7 @@ curl -i "https://agent.electricimp.com/**************?power=1"
 ```
 
 The response should look like this.
+
 ```bash
 HTTP/1.1 200 OK
 Date: Tue, 05 Dec 2017 19:03:35 GMT
@@ -114,62 +116,63 @@ Great! It works just as expected. Next, let's create a Lambda function to do the
 
 ## Creating an AWS Lambda Function
 
-[Log into the AWS Lambda dashboard.](https://console.aws.amazon.com/lambda/home) and click on *Create function*
+[Log into the AWS Lambda dashboard.](https://console.aws.amazon.com/lambda/home) and click on _Create function_
 
 Fill out the form like this - we want to author it from scratch, we want the Node.js 6.10 runtime, and a basic role for lambda execution. If you don't have the role yet, set it up now.
 
 ![create lambda function](/assets/images/create-function.png)
 
 the starter code looks like this:
+
 ```js
 exports.handler = (event, context, callback) => {
     // TODO implement
-    callback(null, 'Hello from Lambda');
+    callback(null, "Hello from Lambda");
 };
 ```
 
 We need it to make a single web request, so it won't need to be much more complicated than that. Paste this in there:
 
 ```js
-var http = require('http');
+var http = require("http");
 let baseUrl = "http://agent.electricimp.com/XiXAucUdTaAa?power=";
 
-function turnItOn () {
+function turnItOn() {
     let url = baseUrl + "1";
     sendRequest(url);
 }
 
-function turnItOff () {
+function turnItOff() {
     let url = baseUrl + "0";
     sendRequest(url);
 }
 
-function sendRequest (url) {
+function sendRequest(url) {
     http.get(url, (res) => {
         console.log("Got response: " + res.statusCode);
-    }).on('error', (e) => {
+    }).on("error", (e) => {
         console.log("Got an error: " + e.message);
-    })
+    });
 }
 
 exports.handler = (event, context, callback) => {
     try {
-        let intentName = event['request']['intent']['name']
+        let intentName = event["request"]["intent"]["name"];
         intentName == "TreeOnIntent" ? turnItOn() : turnItOff();
     } catch (e) {
-        turnItOn() // lets turn on the tree, just in case
+        turnItOn(); // lets turn on the tree, just in case
     }
 
     let response = {
-      "version": "1.0",
-      "response": {
-        "outputSpeech": {
-          "type": "PlainText",
-          "text": "ok",
-          "ssml": "<speak>ok</speak>"
-        }
-      }
-    }
+        version: "1.0",
+        response: {
+            outputSpeech: {
+                type: "PlainText",
+                text: "ok",
+                ssml: "<speak>ok</speak>",
+            },
+        },
+    };
     callback(null, response);
 };
 ```
@@ -183,18 +186,17 @@ Lets dive right in.
 3. Click **Add a new skill**
 4. Choose an invocation name. I went with Christmas tree. ![new alexa skill](/assets/images/new-alexa-skill.png)
 
-This part was tricky at first. I wanted to be able to say **Alexa, turn on the tree**, but the phrase **turn on...** tells Alexa to look for a Smart Home Skill API. That's a little more complicated to set up, because you have to register your Smart Device and authenticate it. Let's avoid that for now. 
+This part was tricky at first. I wanted to be able to say **Alexa, turn on the tree**, but the phrase **turn on...** tells Alexa to look for a Smart Home Skill API. That's a little more complicated to set up, because you have to register your Smart Device and authenticate it. Let's avoid that for now.
 
 Since we need to stick to custom skill invocations, we need to pick something along these lines:
 
-
 ```markdown
-Alexa, *ask* christmas tree to light up
-Alexa, *ask* christmas tree off/on
-Alexa, *tell* christmas tree to light up
-Alexa, *load* christmas tree and turn it on
-Alexa, *run* christmas tree and turn on the lights
-Alexa, *start* christmas tree on
+Alexa, _ask_ christmas tree to light up
+Alexa, _ask_ christmas tree off/on
+Alexa, _tell_ christmas tree to light up
+Alexa, _load_ christmas tree and turn it on
+Alexa, _run_ christmas tree and turn on the lights
+Alexa, _start_ christmas tree on
 ```
 
 Some of these are a little clunky, but they'll do the trick. (Let me know if you have better ways of solving this!)
@@ -212,13 +214,13 @@ We will need two Intents - one to turn the tree on, and another to turn it off.
 
 ![new intent](/assets/images/create-new-custom-intent.png)
 
-I named them *TreeOnIntent* and *TreeOffIntent*. After we name the intent, we need to add *utterances*. These are the things that come after the invocation name when someone is speaking to Alexa. **After you do this, make sure your Lambda function code has the correct intent names**. 
+I named them _TreeOnIntent_ and _TreeOffIntent_. After we name the intent, we need to add _utterances_. These are the things that come after the invocation name when someone is speaking to Alexa. **After you do this, make sure your Lambda function code has the correct intent names**.
 
 The whole command breaks down like this:
 
-**`Alexa, ask|tell|load|run|start  <invocation name> <utterance>`**
+**`Alexa, ask|tell|load|run|start <invocation name> <utterance>`**
 
-For the *TreeOnIntent*, I used these utterances:
+For the _TreeOnIntent_, I used these utterances:
 
 ```bash
 on
